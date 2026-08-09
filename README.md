@@ -32,20 +32,18 @@ Python no produce un archivo binario nativo ejecutable directo. En su lugar, el 
 
 A continuación se presentan los tiempos promedio obtenidos expresados en segundos:
 
-| Tamaño Matriz ($N \times N$) | Python (s) | C (-O0) (s) | C (-O3) (s) | Aceleración C-O3 vs Python |
-| :---: | :---: | :---: | :---: | :---: |
-| 50x50 | 0.005701 | 0.000000 | 0.000000 | 0.00x |
-| 100x100 | 0.047446 | 0.003000 | 0.000000 | 0.00x |
-| 150x150 | 0.144890 | 0.008000 | 0.001000 | 144.89x |
-| 200x200 | 0.336478 | 0.019000 | 0.004000 | 84.12x |
-| 250x250 | 0.657364 | 0.037667 | 0.008000 | 82.17x |
-| 300x300 | 1.188186 | 0.070333 | 0.015000 | 79.21x |
-| 350x350 | 1.841862 | 0.105000 | 0.024333 | 75.69x |
-| 400x400 | 2.856981 | 0.162000 | 0.036667 | 77.92x |
+| Tamaño Matriz ($N \times N$) | Python (s) | C (-O0) (s) | C (-O3) (s)
+| :---: | :---: | :---: | :---: |
+| 50x50 | 0.005701 | 0.000000 | 0.000000 |
+| 100x100 | 0.047446 | 0.003000 | 0.000000 |
+| 150x150 | 0.144890 | 0.008000 | 0.001000 |
+| 200x200 | 0.336478 | 0.019000 | 0.004000 |
+| 250x250 | 0.657364 | 0.037667 | 0.008000 |
+| 300x300 | 1.188186 | 0.070333 | 0.015000 |
+| 350x350 | 1.841862 | 0.105000 | 0.024333 |
+| 400x400 | 2.856981 | 0.162000 | 0.036667 |
 
 ## 5. Análisis del Gráfico de Rendimiento
-
-![Gráfica comparativa de tiempo de ejecución](benchmark_results.png)
 
 Al observar las curvas del gráfico:
 1. **Comportamiento Curva Lineal**: La curva de Python crece de forma vertiginosa a medida que $N$ aumenta hacia 400. Mientras que Python requiere varios segundos para procesar una matriz de $400 \times 400$, C realiza el mismo procedimiento en una fracción de segundo.
