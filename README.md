@@ -56,7 +56,7 @@ Al correr **benchmark.py**, se nos genera un archivo llamado **benchmark_results
 * **Uso Práctico**: En desarrollo de software real, Python se prefiere para desarrollo rápido, prototipado y lógica de alto nivel, mientras que los módulos intensivos en cálculo numérico se delegan a librerías escritas en C/C++ (como NumPy o PyTorch en Python).
 
 ## 7. Guia de ejecucion:
-### Python y C
+### Python (Windows)
 
 1. Abre la terminal (CMD, PowerShell, Terminal, etc.).
 2. Navega a la carpeta del archivo:
@@ -71,8 +71,38 @@ Al correr **benchmark.py**, se nos genera un archivo llamado **benchmark_results
    ```bash
    python3 benchmark.py
    ```
-   En Windows también puedes usar:
+   también puedes usar:
    ```bash
    py benchmark.py
    ```
+
+### Python (Linux)
+
+1. **Verifica que Python esté instalado:**
+   ```bash
+   python3 --version
+   ```
+   La mayoría de distribuciones de Linux ya incluyen Python 3 preinstalado. [web:26][web:27][web:29]
+
+2. **Abre la terminal y navega a la carpeta de tu script:**
+   ```bash
+   cd ruta/de/la/carpetta
+   ```
+
+3. **Ejecuta el script:**
+   ```bash
+   python3 benchmark.py
+   ```
+
+4. **(Opcional) Hacer el script ejecutable directamente:**  
+   Si quieres ejecutarlo como `./benchmark.py`, añade esta línea al inicio del archivo:
+   ```python
+   #!/usr/bin/env python3
+   ```
+   Luego dale permisos de ejecución:
+   ```bash
+   chmod +x benchmark.py
+   ./benchmark.py
+   ```
+   [web:30]
 > **Nota:** Para esta tarea se implementaron funciones que permiten compilar y correr el codigo de Python y de C directamente desde **benchmark.py**, por lo cual no es necesario ejecutar ambos archivos por aparte.
