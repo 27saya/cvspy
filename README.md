@@ -58,4 +58,21 @@ Al observar las curvas del gráfico:
 ## 6. Guia de ejecucion:
 ### Python y C
 
+1. Abre la terminal (CMD, PowerShell, Terminal, etc.).
+2. Navega a la carpeta del archivo:
+   ```bash
+   cd ruta/de/tu/carpeta
+   ```
+3. Ejecuta el script:
+   ```bash
+   python nombre_archivo.py
+   ```
+   o, en algunos sistemas:
+   ```bash
+   python3 nombre_archivo.py
+   ```
+   En Windows también puedes usar:
+   ```bash
+   py nombre_archivo.py
+   ```
 > **Nota:** Para esta tarea se implementaron funciones que permiten compilar y correr el codigo de Python y de C directamente desde **benchmark.py**, por lo cual no es necesario ejecutar ambos archivos por aparte.
