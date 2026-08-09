@@ -13,7 +13,7 @@ C es un lenguaje que pasa por un proceso previo de compilación. El compilador (
 * **Optimizaciones del compilador**: Las opciones de compilación como `-O3` reorganizan las instrucciones binarias, aprovechan los registros del procesador y desenrollan bucles para minimizar accesos a memoria.
 
 ### Lenguaje interpretado (Python)
-Python no produce un archivo binario nativo ejecutable directo. En su lugar, el intérprete lee el código, lo convierte en un formato intermedio llamado *bytecode* y ejecuta este *bytecode* paso a paso mediante una Máquina Virtual (CPython).
+Python no produce un archivo binario nativo ejecutable directo. En su lugar, el intérprete lee el código, lo convierte en un formato intermedio llamado *bytecode* y ejecuta este *bytecode* paso a paso mediante una máquina virtual.
 * **Sobrecarga de interpretación**: En cada iteración de un bucle, el intérprete debe verificar dinámicamente los tipos de datos de las variables, gestionar referencias de objetos en memoria y el despacho de funciones.
 * **Costo en bucles anidados**: En un algoritmo de complejidad $O(N^3)$, la sobrecarga de comprobación del intérprete se multiplica por millones de iteraciones, ralentizando la ejecución considerablemente en comparación con el código nativo.
 
