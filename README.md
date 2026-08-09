@@ -1,4 +1,4 @@
-# Informe: Comparación de rendimiento entre compilados (C) e interpretados (Python)
+# Informe: Comparación de rendimiento entre lenguajes compilados (C) e interpretados (Python)
 
 ## 1. Introducción y objetivos
 El propósito de este experimento es analizar cuantitativa y cualitativamente las diferencias de rendimiento en tiempo de ejecución entre un lenguaje compilado (**C**) y un lenguaje interpretado (**Python**).
