@@ -54,3 +54,58 @@ Al observar las curvas del gráfico:
 * **Eficiencia de Ejecución**: C es sustancialmente más rápido que Python para algoritmos numéricos intensivos implementados con bucles explícitos. Esto se debe a que C ejecuta código máquina directo sin la sobrecarga del intérprete.
 * **Costo de la Abstracción**: La flexibilidad de Python (tipado dinámico, gestión automática de memoria, legibilidad) tiene un costo en rendimiento computacional cuando se procesan estructuras de bajo nivel sin librerías optimizadas.
 * **Uso Práctico**: En desarrollo de software real, Python se prefiere para desarrollo rápido, prototipado y lógica de alto nivel, mientras que los módulos intensivos en cálculo numérico se delegan a librerías escritas en C/C++ (como NumPy o PyTorch en Python).
+
+## 6. Guia de ejecucion:
+### Python
+
+1. Abre la terminal (CMD, PowerShell, Terminal, etc.).
+2. Navega a la carpeta del archivo:
+   ```bash
+   cd ruta/de/tu/carpeta
+   ```
+3. Ejecuta el script:
+   ```bash
+   python nombre_archivo.py
+   ```
+   o, en algunos sistemas:
+   ```bash
+   python3 nombre_archivo.py
+   ```
+   En Windows también puedes usar:
+   ```bash
+   py nombre_archivo.py
+   ```
+
+### C
+
+1. Asegúrate de tener un compilador instalado:
+   - Windows: [MinGW](https://www.mingw.org/) o [MSVC](https://visualstudio.microsoft.com/)
+   - macOS: `Xcode Command Line Tools` (`xcode-select --install`)
+   - Linux: `gcc` o `clang` (usualmente ya instalado)
+
+2. Abre la terminal y ve a la carpeta del archivo:
+   ```bash
+   cd ruta/de/tu/carpeta
+   ```
+
+3. Compila el programa:
+   ```bash
+   gcc nombre_archivo.c -o nombre_archivo
+   ```
+   Esto genera un ejecutable (`nombre_archivo` en Linux/macOS, `nombre_archivo.exe` en Windows).
+
+4. Ejecuta el programa:
+   - Linux/macOS:
+     ```bash
+     ./nombre_archivo
+     ```
+   - Windows (CMD/PowerShell):
+     ```bash
+     nombre_archivo.exe
+     ```
+     o simplemente:
+     ```bash
+     nombre_archivo
+     ```
+
+> **Nota:** En Windows, si `gcc` no se reconoce, instala MinGW y agrégalo al PATH o usa `clang` / el compilador de Visual Studio (`cl`).
