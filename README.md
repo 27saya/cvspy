@@ -5,19 +5,19 @@ El propósito de este experimento es analizar cuantitativa y cualitativamente la
 
 Para lograr una comparación objetiva, se implementó exactamente el mismo algoritmo numérico en ambos lenguajes: la **multiplicación directa de matrices cuadradas** ($N \times N$) utilizando bucles anidados directos ($O(N^3)$).
 
-## 2. Fundamento Teórico Accesible
+## 2. Fundamento teorico
 
-### Lenguaje Compilado (C)
+### Lenguaje compilado (C)
 C es un lenguaje que pasa por un proceso previo de compilación. El compilador (`gcc`) traduce el código fuente completo en un único paso directamente a **código máquina** (instrucciones binarias nativas del procesador local). 
 * **Ventaja clave**: Al momento de la ejecución, el procesador ejecuta directamente las instrucciones de bajo nivel sin intermediarios ni decisiones sobre el tipo de datos.
 * **Optimizaciones del compilador**: Las opciones de compilación como `-O3` reorganizan las instrucciones binarias, aprovechan los registros del procesador y desenrollan bucles para minimizar accesos a memoria.
 
-### Lenguaje Interpretado (Python)
+### Lenguaje interpretado (Python)
 Python no produce un archivo binario nativo ejecutable directo. En su lugar, el intérprete lee el código, lo convierte en un formato intermedio llamado *bytecode* y ejecuta este *bytecode* paso a paso mediante una Máquina Virtual (CPython).
 * **Sobrecarga de interpretación**: En cada iteración de un bucle, el intérprete debe verificar dinámicamente los tipos de datos de las variables, gestionar referencias de objetos en memoria y el despacho de funciones.
 * **Costo en bucles anidados**: En un algoritmo de complejidad $O(N^3)$, la sobrecarga de comprobación del intérprete se multiplica por millones de iteraciones, ralentizando la ejecución considerablemente en comparación con el código nativo.
 
-## 3. Metodología Experimental
+## 3. Metodología
 1. **Algoritmo**: Multiplicación de matrices $C_{i,j} = \sum_{k=0}^{N-1} A_{i,k} \times B_{k,j}$.
 2. **Entornos probados**:
    - **Python 3.14**: Implementación nativa en Python usando bucles `for` nativos.
@@ -28,7 +28,7 @@ Python no produce un archivo binario nativo ejecutable directo. En su lugar, el 
    - En C se utilizó la función `clock()` de la librería nativa `<time.h>`.
 4. **Procedimiento**: Se ejecutó cada tamaño de matriz $N \in \{50, 100, 150, 200, 250, 300, 350, 400\}$ un total de 3 veces y se calculó el promedio para reducir el impacto de ruido en el sistema operativo.
 
-## 4. Resultados Experimentales
+## 4. Resultados experimentales
 
 A continuación se presentan los tiempos promedio obtenidos expresados en segundos:
 
@@ -43,19 +43,19 @@ A continuación se presentan los tiempos promedio obtenidos expresados en segund
 | 350x350 | 1.841862 | 0.105000 | 0.024333 |
 | 400x400 | 2.856981 | 0.162000 | 0.036667 |
 
-## 5. Análisis del Gráfico de Rendimiento
+## 5. Gráfico de rendimiento
 
-Al observar las curvas del gráfico:
-1. **Comportamiento Curva Lineal**: La curva de Python crece de forma vertiginosa a medida que $N$ aumenta hacia 400. Mientras que Python requiere varios segundos para procesar una matriz de $400 \times 400$, C realiza el mismo procedimiento en una fracción de segundo.
-2. **Escala Logarítmica**: La gráfica semilogarítmica muestra una separación constante entre la línea de Python y las líneas de C. Esta brecha vertical representa un factor de diferencia de orden de magnitud (C es aproximadamente entre 30 y 100 veces más rápido en este tipo de cálculo intensivo en bucles).
-3. **Efecto de la Optimización (`-O3`)**: La comparación entre C sin optimizar (`-O0`) y C optimizado (`-O3`) demuestra que el compilador logra reducir aún más el tiempo mediante vectorización e instrucciones especializadas de la CPU.
+Al correr **benchmark.py**, se nos genera un archivo llamado **benchmark_results.png**, el cual contiene el grafico de rendimiento de ambos lenguajes. Al analizarlo podemos ver:
+1. **Comportamiento curva**: La curva de Python crece de forma vertiginosa a medida que $N$ aumenta hacia 400. Mientras que Python requiere varios segundos para procesar una matriz de $400 \times 400$, C realiza el mismo procedimiento en una fracción de segundo.
+2. **Escala logarítmica**: La gráfica muestra una separación constante entre la línea de Python y las líneas de C. Esta brecha vertical representa un factor de diferencia de orden de magnitud (C es aproximadamente entre 30 y 100 veces más rápido en este tipo de cálculo intensivo en bucles).
+3. **Efecto de la optimización (`-O3`)**: La comparación entre C sin optimizar (`-O0`) y C optimizado (`-O3`) demuestra que el compilador logra reducir aún más el tiempo mediante vectorización e instrucciones especializadas de la CPU.
 
 ## 6. Conclusiones
 * **Eficiencia de Ejecución**: C es sustancialmente más rápido que Python para algoritmos numéricos intensivos implementados con bucles explícitos. Esto se debe a que C ejecuta código máquina directo sin la sobrecarga del intérprete.
 * **Costo de la Abstracción**: La flexibilidad de Python (tipado dinámico, gestión automática de memoria, legibilidad) tiene un costo en rendimiento computacional cuando se procesan estructuras de bajo nivel sin librerías optimizadas.
 * **Uso Práctico**: En desarrollo de software real, Python se prefiere para desarrollo rápido, prototipado y lógica de alto nivel, mientras que los módulos intensivos en cálculo numérico se delegan a librerías escritas en C/C++ (como NumPy o PyTorch en Python).
 
-## 6. Guia de ejecucion:
+## 7. Guia de ejecucion:
 ### Python y C
 
 1. Abre la terminal (CMD, PowerShell, Terminal, etc.).
