@@ -104,5 +104,4 @@ Al correr **benchmark.py**, se nos genera un archivo llamado **benchmark_results
    chmod +x benchmark.py
    ./benchmark.py
    ```
-   [web:30]
 > **Nota:** Para esta tarea se implementaron funciones que permiten compilar y correr el codigo de Python y de C directamente desde **benchmark.py**, por lo cual no es necesario ejecutar ambos archivos por aparte.
