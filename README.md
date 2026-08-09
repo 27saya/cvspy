@@ -1,6 +1,6 @@
-# Informe Experimental: Comparación de Rendimiento entre Lenguajes Compilados (C) e Interpretados (Python)
+# Informe: Comparación de rendimiento entre compilados (C) e interpretados (Python)
 
-## 1. Introducción y Objetivos
+## 1. Introducción y objetivos
 El propósito de este experimento es analizar cuantitativa y cualitativamente las diferencias de rendimiento en tiempo de ejecución entre un lenguaje compilado (**C**) y un lenguaje interpretado (**Python**).
 
 Para lograr una comparación objetiva, se implementó exactamente el mismo algoritmo numérico en ambos lenguajes: la **multiplicación directa de matrices cuadradas** ($N \times N$) utilizando bucles anidados directos ($O(N^3)$).
